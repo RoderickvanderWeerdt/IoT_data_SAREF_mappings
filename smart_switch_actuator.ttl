@@ -1,0 +1,43 @@
+# This is a template for the data source 'smart_switch_actuator'.
+# Everything within the '<' or '>' brackets should be replaced
+# when using the template.
+# saref:OnOffState is replaced by either saref:OnState or 
+# saref:OffState depending on the message.
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix sosa: <http://www.w3.org/ns/sosa/>
+@prefix saref: <https://saref.etsi.org/core/>
+@prefix example: <http://example.org/>
+
+:<PROPERTY_URI> rdf:type saref:Light ;
+                saref:isPropertyOf :<FEATURE_URI> ;
+                isMeasuredByDevice :<DEVICE_URI> .
+
+:<FEATURE_URI> rdf:type example:<FEATURE_OF_INT> .
+               saref:hasMeasurement :<URI_M> ;
+               saref:hasProperty :<PROPERTY_URI> .
+
+example:<FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
+
+:<DEVICE_URI> saref:type saref:Actuator ;
+              saref:controlsProperty :<PROPERTY_URI> ;
+              saref:accomplishes :<TASK_URI> ;
+              saref:hasFunction :<FUNCTION_URI> ;
+              saref:hasState :<STATE_URI> .
+
+:<TASK_URI> rdf:type saref:Task ;
+            saref:isAccomplishedBy :<DEVICE_URI> .
+
+:<SERVICE_URI> rdf:type saref:SwitchOnService ;
+               saref:isOfferedBy :<DEVICE_URI> ;
+               saref:represents :<FUNCTION_URI> .
+            
+:<FUNCTION_URI> rdf:type saref:ActuatingFunction ;
+                saref:hasCommand :<COMMAND_URI> .
+
+:<COMMAND_URI> rdf:type saref:ToggleCommand ;
+               saref:isCommandOf :<FUNCTION_URI> ;
+               saref:actsUpon :<STATE_URI> .
+
+:<STATE_URI> rdf:type saref:OnOffState .

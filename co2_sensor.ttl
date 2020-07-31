@@ -1,0 +1,45 @@
+# This is a template for the data source 'CO2_sensor'.
+# Everything within the '<' or '>' brackets should be replaced
+# when using the template.
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix sosa: <http://www.w3.org/ns/sosa/>
+@prefix saref: <https://saref.etsi.org/core/>
+@prefix example: <http://example.org/>
+
+:<URI_M> rdf:type saref:Measurement;
+         saref:hasValue <INPUT_VALUE> ;
+         saref:isMeasuredIn :<UNIT_URI> ;
+         saref:hasTimeStamp <INPUT_VALUE_TIME> ;
+         saref:isMeasurementOf :<FEATURE_URI> ;
+         rdf:relatesToProperty :<PROPERTY_URI> ;
+         saref:measurementMadeBy :<DEVICE_URI> .
+
+:<UNIT_URI> rdf:type om:partsPerMillion .
+om:partsPerMillion rdfs:subClassOf saref:UnitOfMeasure .
+
+:<PROPERTY_URI> rdf:type example:CO2 ;
+                saref:relatesToMeasurement :<URI_M> ;
+                saref:isPropertyOf :<FEATURE_URI> ;
+                isMeasuredByDevice :<DEVICE_URI> .
+
+example:CO2 rdfs:subClassOf saref:Property ;
+            rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is a measurement of the CO2 in the air (ppm)" .
+
+:<FEATURE_URI> rdf:type example:<FEATURE_OF_INT> .
+               saref:hasMeasurement :<URI_M> ;
+               saref:hasProperty :<PROPERTY_URI> .
+
+example:<FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
+
+:<DEVICE_URI> saref:type saref:Sensor ;
+              saref:makesMeasurement :<URI_M> ;
+              saref:measuresProperty :<PROPERTY_URI> ;
+              saref:accomplishes :<TASK_URI> ;
+              saref:hasFunction :<FUNCTION_URI> .
+
+:<TASK_URI> rdf:type saref:WellBeing ;
+            saref:isAccomplishedBy :<DEVICE_URI> .
+
+:<FUNCTION_URI> rdf:type saref:SensingFunction .

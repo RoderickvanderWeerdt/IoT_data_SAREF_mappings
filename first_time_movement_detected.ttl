@@ -1,0 +1,35 @@
+# This is a template for the data source 'first_time_movement_detected'.
+# Everything within the '<' or '>' brackets should be replaced
+# when using the template.
+# example:YesNoState is replaced by either example:YesState or 
+# example:NoState depending on the message.
+
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+@prefix sosa: <http://www.w3.org/ns/sosa/>
+@prefix saref: <https://saref.etsi.org/core/>
+@prefix example: <http://example.org/>
+
+:<PROPERTY_URI> rdf:type saref:Occupancy ;
+				saref:relatesToMeasurement :<URI_M> ;
+				saref:isPropertyOf :<FEATURE_URI> ;
+				isMeasuredByDevice :<DEVICE_URI> .
+
+:<FEATURE_URI> rdf:type example:<FEATURE_OF_INT> .
+			   saref:hasMeasurement :<URI_M> ;
+			   saref:hasProperty :<PROPERTY_URI> .
+
+example:<FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
+
+:<DEVICE_URI> saref:type saref:Device ;
+			  saref:measuresProperty :<PROPERTY_URI> ;
+			  saref:accomplishes :<TASK_URI> ;
+			  saref:hasFunction :<FUNCTION_URI> ;
+			  saref:hasState example:YesNoState .
+
+:<TASK_URI> rdf:type saref:safety ;
+			saref:isAccomplishedBy :<DEVICE_URI> .
+			
+:<FUNCTION_URI> rdf:type saref:SensingFunction .
+
+example:YesNoState rdfs:subClassOf saref:State .
