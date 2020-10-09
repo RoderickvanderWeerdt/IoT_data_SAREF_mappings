@@ -12,14 +12,14 @@
 @prefix om: <http://www.wurvoc.org/vocabularies/om-1.8/>
 
 <URI_M> rdf:type saref:Measurement;
-         saref:hasValue {INPUT_VALUE} ;
-         saref:isMeasuredIn <UNIT_URI> ;
-         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
-         saref:isMeasurementOf <FEATURE_URI> ;
-         rdf:relatesToProperty <PROPERTY_URI> ;
-         saref:measurementMadeBy <DEVICE_URI> .
+        saref:hasValue {INPUT_VALUE} ;
+        saref:isMeasuredIn <UNIT_URI> ;
+        saref:hasTimeStamp {INPUT_VALUE_TIME} ;
+        saref:isMeasurementOf <FEATURE_URI> ;
+        rdf:relatesToProperty <PROPERTY_URI> ;
+        saref:measurementMadeBy <DEVICE_URI> .
 
-<UNIT_URI> owl:sameAs om:partsPerMillion ;
+<UNIT_URI> owl:sameAs om:partsPerMillion .
 om:partsPerMillion rdf:type example:CO2Unit .
 
 <PROPERTY_URI> rdf:type example:CO2 ;
