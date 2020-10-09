@@ -13,14 +13,14 @@
                saref:isPropertyOf <FEATURE_URI> ;
                saref:isMeasuredByDevice <DEVICE_URI> .
 
-<FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
-               saref:hasMeasurement <URI_M> ;
-               saref:hasProperty <PROPERTY_URI> .
+<FEATURE_URI> rdf:type example:<FEATURE_OF_INT> ;
+              saref:hasMeasurement <URI_M> ;
+              saref:hasProperty <PROPERTY_URI> .
 
-<FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
+example:<FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
 
 <DEVICE_URI> saref:type saref:Device ;
-             saref:measuresProperty <PROPERTY_URI> ;
+             saref:measuresProperty :<PROPERTY_URI> ;
              saref:accomplishes <TASK_URI> ;
              saref:hasFunction <FUNCTION_URI> ;
              saref:hasState saref:OnOffState .
