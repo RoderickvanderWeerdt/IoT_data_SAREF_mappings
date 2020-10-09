@@ -10,24 +10,24 @@
 @prefix example: <http://example.org/>
 
 <URI_M> rdf:type saref:Measurement;
-         saref:hasValue {NPUT_VALUE} ;
-         saref:isMeasuredIn <UNIT_URI> ;
-         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
-         saref:isMeasurementOf <FEATURE_URI> ;
-         rdf:relatesToProperty <PROPERTY_URI> ;
-         saref:measurementMadeBy <DEVICE_URI> .
+        saref:hasValue {NPUT_VALUE} ;
+        saref:isMeasuredIn <UNIT_URI> ;
+        saref:hasTimeStamp {INPUT_VALUE_TIME} ;
+        saref:isMeasurementOf <FEATURE_URI> ;
+        rdf:relatesToProperty <PROPERTY_URI> ;
+        saref:measurementMadeBy <DEVICE_URI> .
 
-<UNIT_URI> owl:sameAs om:percent ;
+<UNIT_URI> owl:sameAs om:percent .
 om:percent rdf:type example:HumidityUnit .
 
 <PROPERTY_URI> rdf:type saref:Humidity ;
-	       saref:relatesToMeasurement <URI_M> ;
-	       saref:isPropertyOf <FEATURE_URI> ;
-	       isMeasuredByDevice <DEVICE_URI> .
+               saref:relatesToMeasurement <URI_M> ;
+               saref:isPropertyOf <FEATURE_URI> ;
+               isMeasuredByDevice <DEVICE_URI> .
 
 <FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
-	      saref:hasMeasurement <URI_M> ;
-	      saref:hasProperty <PROPERTY_URI> .
+              saref:hasMeasurement <URI_M> ;
+              saref:hasProperty <PROPERTY_URI> .
 
 <FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
 
@@ -38,6 +38,6 @@ om:percent rdf:type example:HumidityUnit .
              saref:hasFunction <FUNCTION_URI> .
 
 <TASK_URI> rdf:type saref:Comfort ;
-	   saref:isAccomplishedBy <DEVICE_URI> .
+           saref:isAccomplishedBy <DEVICE_URI> .
 			
 <FUNCTION_URI> rdf:type saref:SensingFunction .
