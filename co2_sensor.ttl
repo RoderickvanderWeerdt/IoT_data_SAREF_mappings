@@ -20,7 +20,7 @@
          saref:measurementMadeBy <DEVICE_URI> .
 
 <UNIT_URI> owl:sameAs om:partsPerMillion .
-om:partsPerMillion rdf:type ex:CO2Unit .
+om:partsPerMillion rdf:type example:CO2Unit .
 
 <PROPERTY_URI> rdf:type example:CO2 ;
                saref:relatesToMeasurement <URI_M> ;
