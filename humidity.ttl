@@ -6,18 +6,16 @@
 
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
-@prefix owl: <http://www.w3.org/2002/07/owl#>
 @prefix example: <http://example.org/>
 
 <URI_M> rdf:type saref:Measurement;
         saref:hasValue {NPUT_VALUE} ;
-        saref:isMeasuredIn <UNIT_URI> ;
+        saref:isMeasuredIn om:percent ;
         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
         saref:isMeasurementOf <FEATURE_URI> ;
         rdf:relatesToProperty <PROPERTY_URI> ;
         saref:measurementMadeBy <DEVICE_URI> .
 
-<UNIT_URI> owl:sameAs om:percent .
 om:percent rdf:type example:HumidityUnit .
 
 <PROPERTY_URI> rdf:type saref:Humidity ;
