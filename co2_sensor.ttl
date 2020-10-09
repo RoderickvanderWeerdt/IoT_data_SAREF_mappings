@@ -13,13 +13,12 @@
 
 <URI_M> rdf:type saref:Measurement;
         saref:hasValue {INPUT_VALUE} ;
-        saref:isMeasuredIn <UNIT_URI> ;
+        saref:isMeasuredIn om:partsPerMillion ;
         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
         saref:isMeasurementOf <FEATURE_URI> ;
         rdf:relatesToProperty <PROPERTY_URI> ;
         saref:measurementMadeBy <DEVICE_URI> .
 
-<UNIT_URI> owl:sameAs om:partsPerMillion .
 om:partsPerMillion rdf:type example:CO2Unit .
 
 <PROPERTY_URI> rdf:type example:CO2 ;
