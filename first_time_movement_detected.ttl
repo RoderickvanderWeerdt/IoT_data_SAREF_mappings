@@ -13,7 +13,7 @@
 			saref:isPropertyOf <FEATURE_URI> ;
 			isMeasuredByDevice <DEVICE_URI> .
 
-<FEATURE_URI> rdf:type <FEATURE_OF_INT> .
+<FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
 	      saref:hasMeasurement <URI_M> ;
 	      saref:hasProperty <PROPERTY_URI> .
 
