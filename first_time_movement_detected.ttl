@@ -9,23 +9,23 @@
 @prefix saref: <https://saref.etsi.org/core/>
 
 <PROPERTY_URI> rdf:type saref:Occupancy ;
-			saref:relatesToMeasurement <URI_M> ;
-			saref:isPropertyOf <FEATURE_URI> ;
-			isMeasuredByDevice <DEVICE_URI> .
+               saref:relatesToMeasurement <URI_M> ;
+               saref:isPropertyOf <FEATURE_URI> ;
+               isMeasuredByDevice <DEVICE_URI> .
 
 <FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
-	      saref:hasMeasurement <URI_M> ;
-	      saref:hasProperty <PROPERTY_URI> .
+              saref:hasMeasurement <URI_M> ;
+              saref:hasProperty <PROPERTY_URI> .
 
 <FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
 
 <DEVICE_URI> saref:type saref:Device ;
-	     saref:measuresProperty <PROPERTY_URI> ;
-	     saref:accomplishes <TASK_URI> ;
-	     saref:hasFunction <FUNCTION_URI> ;
-	     saref:hasState saref:OnOffState .
+             saref:measuresProperty <PROPERTY_URI> ;
+             saref:accomplishes <TASK_URI> ;
+             saref:hasFunction <FUNCTION_URI> ;
+             saref:hasState saref:OnOffState .
 
 :<TASK_URI> rdf:type saref:safety ;
-			saref:isAccomplishedBy <DEVICE_URI> .
+            saref:isAccomplishedBy <DEVICE_URI> .
 			
 :<FUNCTION_URI> rdf:type saref:SensingFunction .
