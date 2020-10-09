@@ -11,7 +11,7 @@
 <PROPERTY_URI> rdf:type saref:Occupancy ;
                saref:relatesToMeasurement <URI_M> ;
                saref:isPropertyOf <FEATURE_URI> ;
-               isMeasuredByDevice <DEVICE_URI> .
+               saref:isMeasuredByDevice <DEVICE_URI> .
 
 <FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
               saref:hasMeasurement <URI_M> ;
