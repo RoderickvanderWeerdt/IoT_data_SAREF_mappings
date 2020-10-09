@@ -14,7 +14,7 @@
         saref:isMeasuredIn om:percent ;
         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
         saref:isMeasurementOf <FEATURE_URI> ;
-        rdf:relatesToProperty <PROPERTY_URI> ;
+        saref:relatesToProperty <PROPERTY_URI> ;
         saref:measurementMadeBy <DEVICE_URI> .
 
 om:percent rdf:type example:HumidityUnit .
