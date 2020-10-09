@@ -19,7 +19,7 @@
          rdf:relatesToProperty <PROPERTY_URI> ;
          saref:measurementMadeBy <DEVICE_URI> .
 
-<UNIT_URI> owl:sameAs om:partsPerMillion .
+<UNIT_URI> owl:sameAs om:partsPerMillion ;
 om:partsPerMillion rdf:type example:CO2Unit .
 
 <PROPERTY_URI> rdf:type example:CO2 ;
@@ -30,7 +30,7 @@ om:partsPerMillion rdf:type example:CO2Unit .
 example:CO2 rdfs:subClassOf saref:Property ;
             rdfs:comment "A saref:Property related to some measurements that are characterized by a certain value that is a measurement of the CO2 in the air (ppm)" .
 
-<FEATURE_URI> rdf:type <FEATURE_OF_INT> .
+<FEATURE_URI> rdf:type <FEATURE_OF_INT> ;
               saref:hasMeasurement <URI_M> ;
               saref:hasProperty <PROPERTY_URI> .
 
