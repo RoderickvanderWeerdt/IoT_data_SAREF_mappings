@@ -9,7 +9,7 @@
 @prefix example: <http://example.org/>
 
 <URI_M> rdf:type saref:Measurement;
-        saref:hasValue {NPUT_VALUE} ;
+        saref:hasValue {INPUT_VALUE} ;
         saref:isMeasuredIn om:percent ;
         saref:hasTimeStamp {INPUT_VALUE_TIME} ;
         saref:isMeasurementOf <FEATURE_URI> ;
