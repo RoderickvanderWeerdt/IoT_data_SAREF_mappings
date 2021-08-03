@@ -30,7 +30,7 @@ om:degree_Celsius rdf:type saref:TemperatureUnit .
 
 <FEATURE_OF_INT> rdfs:subClassOf saref:FeatureOfInterest .
 
-<DEVICE_URI> saref:type saref:TemperatureSensor ;
+<DEVICE_URI> rdf:type saref:TemperatureSensor ;
              saref:makesMeasurement <URI_M> ;
              saref:measuresProperty <PROPERTY_URI> ;
              saref:accomplishes <TASK_URI> ;
